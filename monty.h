@@ -47,11 +47,14 @@ typedef struct instruction_s
 typedef struct arg_s
 {
 	FILE *stream;
-	char *line, *head;
+	char *line;
 	unsigned int line_number;
 	char **tokens;
-	int n_tokens, stack_length;
+	int n_tokens;
+	stack_t *head;
 	instruction_t *instruction;
+	int stack_length;
+	int stack;
 }arg_t;
 
 extern arg_t *arguments;
@@ -63,10 +66,12 @@ void initialize_arguments();
 void malloc_failed(void);
 void invalid_instruction(void);
 void get_instruction(void);
+void tokenize_line(void);
 void free_tokens(void);
 void free_arguments();
 void free_head(void);
 void free_stack(stack_t *head);
+void free_all_args(void);
 void close_stream(void);
 void run_instruction(void);
 void push(stack_t **stack, unsigned int line_number);

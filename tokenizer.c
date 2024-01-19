@@ -7,7 +7,7 @@
 void tokenize_line(void)
 {
 	int i = 0;
-	char *delim = " \n", *token = NULL; *linecpy = NULL;
+	char *delim = " \n", *token = NULL, *linecpy = NULL;
 
 	linecpy = malloc(sizeof(char) * (strlen(arguments->line) + 1));
 	strcpy(linecpy, arguments->line);

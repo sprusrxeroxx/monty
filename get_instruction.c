@@ -29,7 +29,7 @@ void get_instruction(void)
 		{"div", &_div}, {"mul", &mul},
 		{"rot1", &rot1}, {"rotr", &rotr},
 		{"stack", &stack}, {"queue", &queue},
-		{"pstr", &pstr} {"pchar", &pchar},
+		{"pstr", &pstr}, {"pchar", &pchar},
 		{"mod", &mod}, {NULL, NULL}};
 	
 	if (arguments->n_tokens == 0)
@@ -37,7 +37,7 @@ void get_instruction(void)
 
 	for (;instructions[i].opcode != NULL;i++)
 	{
-		if (strcmp(instructions[i].opcode, arguments->tokens[0] == 0))
+		if (strcmp(instructions[i].opcode, arguments->tokens[0]) == 0)
 				{
 					arguments->instruction->opcode = instructions[i].opcode;
 					arguments->instruction->f = instructions[i].f;

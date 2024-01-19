@@ -8,9 +8,6 @@
 
 void initialize_arguments()
 {
-	/**char *head;
-	*int stack_length;
-	*/
 
 	arguments = malloc(sizeof(arg_t));
 	if (arguments == NULL)
@@ -21,7 +18,10 @@ void initialize_arguments()
 		malloc_failed();
 
 	arguments->stream = NULL;
+	arguments->head = NULL;
 	arguments->line = NULL;
 	arguments->n_tokens = 0;
 	arguments->line_number = 0;
+	arguments->stack_length = 0;
+	arguments->stack = 1;
 }

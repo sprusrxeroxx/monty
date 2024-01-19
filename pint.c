@@ -7,7 +7,7 @@
  *
  */
 
-void pint(stack **stack, unsigned int line_number)
+void pint(stack_t **stack, unsigned int line_number)
 {
 	(void) stack;
 	if (arguments->head == NULL)
