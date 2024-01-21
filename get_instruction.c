@@ -31,10 +31,14 @@ void get_instruction(void)
 		{"stack", &stack}, {"queue", &queue},
 		{"pstr", &pstr}, {"pchar", &pchar},
 		{"mod", &mod}, {NULL, NULL}};
-	
+
 	if (arguments->n_tokens == 0)
 		return;
-
+	if (arguments->tokens[0][0] == '#')
+	{
+		arguments->instruction->opcode = "nop";
+		arguments->instruction->f = nop;
+	}
 	for (;instructions[i].opcode != NULL;i++)
 	{
 		if (strcmp(instructions[i].opcode, arguments->tokens[0]) == 0)
@@ -44,6 +48,5 @@ void get_instruction(void)
 					return;
 					}
 	}
-
 	invalid_instruction();
 }

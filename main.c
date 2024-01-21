@@ -21,8 +21,14 @@ int main(int argc, char **argv)
 
 	while (getline(&arguments->line, &n, arguments->stream) != -1)
 	{
-		printf("%s", arguments->line);
-	}	
+		arguments->line_number += 1;
+		tokenize_line();
+		get_instruction();
+		run_instruction();
+		free_tokens();
+	}
+	close_stream();
+	free_arguments();
 
 	return (0);
 }

@@ -8,7 +8,7 @@
  *
  */
 
-void free_ehad(void)
+void free_head(void)
 {
 	if (arguments->head)
 		free_stack(arguments->head);

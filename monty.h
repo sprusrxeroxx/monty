@@ -74,6 +74,7 @@ void free_stack(stack_t *head);
 void free_all_args(void);
 void close_stream(void);
 void run_instruction(void);
+void delete_stack_node(void);
 void push(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
