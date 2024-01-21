@@ -21,6 +21,14 @@ void _div(stack_t **stack, unsigned int line_number)
 	tmp1 = arguments->head;
 	tmp2 = tmp1->next;
 
+	if (tmp1->n == 0)
+	{
+		dprintf(2, "L%d: division by zero\n", line_number);
+		free_all_args();
+		exit(EXIT_FAILURE);
+	}
+
+
 	tmp2->n = tmp2->n / tmp1->n;
 	delete_stack_node();
 
